@@ -1,12 +1,22 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Optional;
+import javax.swing.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import java.util.Optional;
 
 public class StudentTest {
+
+/*  Arrange
+    initialize and set any data needed
+
+    Act
+    perform the action which you want to test against
+
+    Assert
+    ask: is the expected result the same as the actual result?*/
 
     private Student student;
 
@@ -48,7 +58,7 @@ public class StudentTest {
 
     @Test
     public void testGetGradeAverage() {
-        assertEquals(87.22, student.getGradeAverage(), 0.01);
+        assertEquals(90.0, student.getGradeAverage(), 0.0);
     }
 
 }
