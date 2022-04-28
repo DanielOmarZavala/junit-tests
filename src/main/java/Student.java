@@ -4,7 +4,8 @@ public class Student {
 
     private String name;
     private long id;
-    private ArrayList<Integer> grades = new ArrayList<>();
+    private static ArrayList<Integer> grades = new ArrayList<>();
+
 
     public Student(String name, long id) {
         this.name = name;
@@ -20,22 +21,26 @@ public class Student {
     }
 
     public void addGrade(int grade) {
-        this.grades.add(grade);
+        grades.add(grade);
     }
 
     public ArrayList<Integer> getGrades() {
         return grades;
     }
 
-//    public double getGradeAverage() {
-//        int totalPoints = this.gradesList.stream().reduce(0, (sum, currentGradeElement) -> {
-//            System.out.println("The sums is currently: " + sum);
-//            System.out.println("The current grade element is: " + currentGradeElement);
-//            System.out.println("********************************");
-//            return sum + currentGradeElement;
-//        });
-//        return (double) totalPoints / this.gradesList.size();
-//    }
+    public double getGradeAverage() {
+        int totalPoints = grades.stream().reduce(0, (sum, currentGradeElement) -> {
+            System.out.println("The sums is currently: " + sum);
+            System.out.println("The current grade element is: " + currentGradeElement);
+            System.out.println("********************************");
+            return sum + currentGradeElement;
+        });
+        return (double) totalPoints / grades.size();
+    }
+
+    public static void popArrList() {
+        grades.add(90);
+    }
 
 
 
